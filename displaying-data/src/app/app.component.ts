@@ -4,15 +4,17 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   template: `
   <h1>{{title}}<h1>
-<h2>My favorite hero is: {{myHero}}<h2>
+  <h2>My favorite hero is: {{myHero}}<h2>
+  <p>Heroes:</p>
+  <ul>
+    <li *ngFor= "let hero of heroes">
+      {{hero}}
+    </li>
+  </ul>
   `
 })
 export class AppComponent {
-  title: string;
-  myHero: string;
-
-  constructor() {
-    this.title = 'Tour of heroes';
-    this.myHero = 'Windstorm';
-  }
+  title = 'Tour of Heroes';
+  heroes = ['Windstorm', 'Bombasto', 'Magneta', 'Tornado'];
+  myHero = this.heroes[0];
 }
