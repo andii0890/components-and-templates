@@ -12,7 +12,7 @@ export class AppComponent {
   myHero: string;
 
   constructor() {
-    title = 'Tour of heroes';
-    myHero = 'Windstorm';
+    this.title = 'Tour of heroes';
+    this.myHero = 'Windstorm';
   }
 }
