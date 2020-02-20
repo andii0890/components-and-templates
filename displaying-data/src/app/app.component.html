@@ -37,6 +37,8 @@
 </button>
 <form #heroForm (ngSubmit)="onSubmit(heroForm)">...</form>
 
+<!----------------------------------------------------------->
+
 <!-- data-binding and HTML -->
 
 <div class='special'>Plain old HTML</div>
@@ -44,3 +46,18 @@
 <button dissabled>Save</button>
 <!-- Bind button disbled state to `isUnchanged` property -->
 <button [disabled]= 'isUnchanged'>Save</button>
+
+<!----------------------------------------------------------->
+
+<!-- Property binding [property] -->
+
+<img [src]="itemImageUrl">
+
+<!-- Notice the colSpan property is camel case-->
+<tr><td [colSpan]="2">Span 2 columns</td></tr>
+
+<p [ngClass]="classes">[ngClass] binding to the classes property making this blue</p>
+
+<app-item-detail [childItem]='parentItem'></app-item-detail>
+
+
