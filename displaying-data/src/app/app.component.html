@@ -36,3 +36,11 @@
 {{hero.name}}
 </button>
 <form #heroForm (ngSubmit)="onSubmit(heroForm)">...</form>
+
+<!-- data-binding and HTML -->
+
+<div class='special'>Plain old HTML</div>
+<img src="images/item.png">
+<button dissabled>Save</button>
+<!-- Bind button disbled state to `isUnchanged` property -->
+<button [disabled]= 'isUnchanged'>Save</button>
