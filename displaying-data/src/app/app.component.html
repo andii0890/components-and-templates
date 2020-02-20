@@ -60,4 +60,39 @@
 
 <app-item-detail [childItem]='parentItem'></app-item-detail>
 
+<!----------------------------------------------------------->
 
+<!-- Binding targets -->
+
+<img [src]= "itemImageUrl">
+
+<!-- bind- prefix alternative: -->
+<img bind-src="itemImageUrl">
+<p [ngClass]="classes">[ngClass] binding to the classes property making thhis blue</p>
+
+<!-- Return the proper type -->
+<app-item-detail [childItem]="parentItem"></app-item-detail>
+
+<app-list-item [items]="currentItem"></app-list-item>
+
+<!-- Remember the brackets -->
+<app-item-detail childItem="parentItem"></app-item-detail>
+
+<!-- One-time string initialization -->
+<app-string-init prefix="This is a one-time initialized strinng."></app-string-init>
+
+<!-- Property binding vs. interpolation -->
+<p><img src="{{itemImageUrl}}">is the <i>interpolated</i> image.</p>
+<p><img [src]="itemImageUrl">is the <i>property bound</i> image.</p>
+
+<p><span>"{{interpolationTitle}}" is the <i>interpolated</i> title.</span></p>
+<p><span [innerHTML]="propertyTitle"></span> is the <i>property bound</i>title.</p>
+
+<!-- Content security -->
+<p><span>"{{evilTitle}}" is the <i>interpolated</i> evil title.</span></p>
+
+<!--
+ Angular generates a warning for the following line as it sanitizes them
+ WARNING: sanitizing HTML stripped some content (see http://g.co/ng/security#xss).
+-->
+<p>"<span [innerHTML]="evilTitle"></span>" is the <i>property bound</i> evil title.</p>
