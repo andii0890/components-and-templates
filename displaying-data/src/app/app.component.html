@@ -1,0 +1,25 @@
+<!-- Interpolation -->
+<h3>Current customer : {{currentCustomer}}</h3>
+
+<p>{{title}}</p>
+<div><img src="{{itemImageUrl}}"></div>
+
+<!-- Ex. "The sum of 1 + 1 is 2 -->
+<p>The sum of 1 + 1 is {{1 + 1 }}.</p>
+
+<!-- Ex. "The sum of 1 + 1 is not 4"-->
+<p>The sum of 1 + 1 is not {{1 + 1 getVal()}}.</p>
+
+<!-- Expression context -->
+<h4>{{recommended}}</h4>
+<img [src]="itemImageUrl2">
+
+<!-- template input variable -->
+<ul>
+	<li *ngFor= "let customer of customers">{{customer.name}}</li>
+</ul>
+
+<!-- template reference variable -->
+<label>Type of something:
+	<input #customerInput>{{customerInput.value}}
+</label>
